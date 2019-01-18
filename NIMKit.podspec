@@ -1,6 +1,6 @@
 Pod::Spec.new do |s| 
-  s.name = 'uikit' 
-  s.version = '2.11.2' 
+  s.name = 'NIMKit' 
+  s.version = '2.11.3' 
   s.summary = 'Netease IM UI Kit' 
   s.homepage = 'http://netease.im' 
   s.license = { :'type' => 'Copyright', :'text' => ' Copyright 2017 Netease '} 
@@ -12,14 +12,13 @@ Pod::Spec.new do |s|
   s.subspec 'Full' do |cs|	
     cs.source_files = 'NIMKit/**/*.{h,m}' 
     cs.dependency 'NIMKit/Core' 
-    cs.dependency 'NIMSDK', '~> 5.9.0' 
-    s.dependency 'farwolf'
+    cs.dependency 'NIMSDK', '~> 6.0.0' 
   end 
 
   s.subspec 'Lite' do |cs|  
     cs.source_files = 'NIMKit/**/*.{h,m}'  
     cs.dependency 'NIMKit/Core'  
-    cs.dependency 'NIMSDK_LITE'
+    cs.dependency 'NIMSDK_LITE', '~> 6.0.0'  
   end  
 
   s.subspec 'Core' do |os|     
@@ -31,5 +30,6 @@ Pod::Spec.new do |s|
   end   
 
   s.default_subspec = 'Lite'  
+  s.dependency 'farwolf.weex'
 
 end 
